@@ -64,15 +64,15 @@ public class FrmNumLitToCifras extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lbNum1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lbNum1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         lbNum1.setForeground(new java.awt.Color(0, 0, 0));
         lbNum1.setText("Num1");
-        jPanel1.add(lbNum1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 280, 50));
+        jPanel1.add(lbNum1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 420, 60));
 
-        lbNum2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lbNum2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         lbNum2.setForeground(new java.awt.Color(0, 0, 0));
         lbNum2.setText("Num2");
-        jPanel1.add(lbNum2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 280, 60));
+        jPanel1.add(lbNum2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 420, 70));
 
         txtNum1.setBackground(new java.awt.Color(255, 255, 153));
         txtNum1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -92,10 +92,10 @@ public class FrmNumLitToCifras extends javax.swing.JFrame {
         });
         jPanel1.add(txtNum2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 330, 180, 50));
 
-        lbNum3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lbNum3.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         lbNum3.setForeground(new java.awt.Color(0, 0, 0));
         lbNum3.setText("Num3");
-        jPanel1.add(lbNum3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 280, 60));
+        jPanel1.add(lbNum3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 420, 70));
 
         txtNum3.setBackground(new java.awt.Color(255, 255, 153));
         txtNum3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -342,8 +342,23 @@ public class FrmNumLitToCifras extends javax.swing.JFrame {
         Cifras.clear();
         contRec = 0;
         int cif = 0;
-
-        intActual = GenerarRandom(0, 999999);
+        
+        int caso = GenerarRandom(1, 6);
+        switch (caso) {
+            case 1:
+                intActual = GenerarRandom(0, 999);
+                break;
+            case 2:
+                intActual = GenerarRandom(0, 999);
+                break;
+            case 3:
+                intActual = GenerarRandom(0, 9999);
+                break;
+            default:
+                intActual = GenerarRandom(0, 99);
+        }
+        
+        
 
         for (int i = intActual; i >= 1; i /= 10) {
             cif++;

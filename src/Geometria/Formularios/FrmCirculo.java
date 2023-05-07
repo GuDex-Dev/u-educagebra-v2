@@ -34,14 +34,13 @@ public class FrmCirculo extends javax.swing.JFrame {
 
         group_editable = new javax.swing.ButtonGroup();
         PanelBackground = new javax.swing.JPanel();
-        lbl_title = new javax.swing.JLabel();
-        lbl_radio = new javax.swing.JLabel();
         txf_radio = new javax.swing.JTextField();
         PanelContenedor = new javax.swing.JPanel();
         PanelGrafico = new javax.swing.JPanel();
         lbl_per = new javax.swing.JLabel();
         lbl_area = new javax.swing.JLabel();
-        lbl_diam = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
+        btnCalcular = new javax.swing.JButton();
         btn_atras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,24 +48,13 @@ public class FrmCirculo extends javax.swing.JFrame {
         PanelBackground.setBackground(new java.awt.Color(255, 204, 204));
         PanelBackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lbl_title.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
-        lbl_title.setForeground(new java.awt.Color(153, 0, 0));
-        lbl_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_title.setText("CÍRCULO");
-        PanelBackground.add(lbl_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 390, 70));
-
-        lbl_radio.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
-        lbl_radio.setForeground(new java.awt.Color(0, 0, 0));
-        lbl_radio.setText("RADIO: ");
-        PanelBackground.add(lbl_radio, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 120, -1));
-
-        txf_radio.setBackground(new java.awt.Color(255, 255, 255));
+        txf_radio.setBackground(new java.awt.Color(241, 230, 184));
         txf_radio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txf_radioActionPerformed(evt);
             }
         });
-        PanelBackground.add(txf_radio, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 110, 30));
+        PanelBackground.add(txf_radio, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 70, 40));
 
         PanelContenedor.setBackground(new java.awt.Color(102, 102, 255));
 
@@ -100,22 +88,28 @@ public class FrmCirculo extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        PanelBackground.add(PanelContenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 350, 320));
+        PanelBackground.add(PanelContenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, 350, 320));
 
-        lbl_per.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
-        lbl_per.setForeground(new java.awt.Color(204, 0, 0));
-        lbl_per.setText("PERÍMETRO: ");
-        PanelBackground.add(lbl_per, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
+        lbl_per.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        lbl_per.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_per.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        PanelBackground.add(lbl_per, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, 140, 40));
 
-        lbl_area.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
-        lbl_area.setForeground(new java.awt.Color(204, 0, 0));
-        lbl_area.setText("ÁREA: ");
-        PanelBackground.add(lbl_area, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
+        lbl_area.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        lbl_area.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_area.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        PanelBackground.add(lbl_area, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 140, 40));
 
-        lbl_diam.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
-        lbl_diam.setForeground(new java.awt.Color(204, 0, 0));
-        lbl_diam.setText("DIÁMETRO: ");
-        PanelBackground.add(lbl_diam, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FrmCirculo.png"))); // NOI18N
+        PanelBackground.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        btnCalcular.setText("jButton1");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
+        PanelBackground.add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 40, 40));
 
         btn_atras.setText("ATRÁS");
         btn_atras.addActionListener(new java.awt.event.ActionListener() {
@@ -123,26 +117,25 @@ public class FrmCirculo extends javax.swing.JFrame {
                 btn_atrasActionPerformed(evt);
             }
         });
-        PanelBackground.add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, -1, -1));
+        PanelBackground.add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBackground, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PanelBackground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBackground, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PanelBackground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void actualizarExtrasTxf() {
-        lbl_per.setText("PERÍMETRO: " + circ1.per());
-        lbl_area.setText("ÁREA: " + circ1.area());
-        lbl_diam.setText("DIÁMETRO: " + circ1.diametro());
+        lbl_per.setText(circ1.per()+" cm");
+        lbl_area.setText(circ1.area()+" cm^2");
     }
 
     private void ValidarYGraficar() {
@@ -161,7 +154,16 @@ public class FrmCirculo extends javax.swing.JFrame {
     }
 
     private void txf_radioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txf_radioActionPerformed
-        try {
+       
+    }//GEN-LAST:event_txf_radioActionPerformed
+
+    private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
+        this.setVisible(false);
+        new FrmGeometria().setVisible(true);
+    }//GEN-LAST:event_btn_atrasActionPerformed
+
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+         try {
             circ1.setRadio(Double.parseDouble(txf_radio.getText()));
             isNum = true;
         } catch (NumberFormatException e) {
@@ -180,12 +182,7 @@ public class FrmCirculo extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Ingrese un radio entre 0 y 300.");
             }
         }
-    }//GEN-LAST:event_txf_radioActionPerformed
-
-    private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
-        this.setVisible(false);
-        new FrmGeometria().setVisible(true);
-    }//GEN-LAST:event_btn_atrasActionPerformed
+    }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,13 +238,12 @@ public class FrmCirculo extends javax.swing.JFrame {
     private javax.swing.JPanel PanelBackground;
     private javax.swing.JPanel PanelContenedor;
     private javax.swing.JPanel PanelGrafico;
+    private javax.swing.JButton btnCalcular;
     private javax.swing.JButton btn_atras;
+    private javax.swing.JLabel fondo;
     private javax.swing.ButtonGroup group_editable;
     private javax.swing.JLabel lbl_area;
-    private javax.swing.JLabel lbl_diam;
     private javax.swing.JLabel lbl_per;
-    private javax.swing.JLabel lbl_radio;
-    private javax.swing.JLabel lbl_title;
     private javax.swing.JTextField txf_radio;
     // End of variables declaration//GEN-END:variables
 }

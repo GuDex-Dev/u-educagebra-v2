@@ -96,7 +96,6 @@ public class FrmNatDiv extends javax.swing.JFrame {
         getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 100, 20));
 
         Continuar.setText("Continuar");
-        Continuar.setEnabled(false);
         Continuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ContinuarActionPerformed(evt);
@@ -181,7 +180,7 @@ public class FrmNatDiv extends javax.swing.JFrame {
         lbResi.setText("");
 
         Random r1 = new Random();
-        Continuar.setEnabled(false);
+        Continuar.setEnabled(true);
         num1 = r1.nextInt(100 - 40 + 1) + 40;
         num2 = r1.nextInt(15 - 5 + 1) + 5;
 

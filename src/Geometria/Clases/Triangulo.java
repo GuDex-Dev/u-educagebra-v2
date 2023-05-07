@@ -26,8 +26,7 @@ public class Triangulo {
     
     public double per() {
         double p = 0;
-        p = Math.round((this.lado1 + this.lado2 + this.lado3)*100);
-        p = p/100;
+        p = Math.round(this.lado1 + this.lado2 + this.lado3);        
         return p;
     }
     

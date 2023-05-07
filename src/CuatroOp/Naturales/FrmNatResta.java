@@ -89,7 +89,6 @@ public class FrmNatResta extends javax.swing.JFrame {
         getContentPane().add(lbFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 330));
 
         btnContinuar.setText("Continuar");
-        btnContinuar.setEnabled(false);
         btnContinuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnContinuarActionPerformed(evt);

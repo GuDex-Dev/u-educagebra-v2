@@ -32,6 +32,7 @@ public class FrmRegistro extends javax.swing.JFrame {
         cboGrado = new javax.swing.JComboBox<>();
         fondo = new javax.swing.JLabel();
         btnGuardar = new javax.swing.JButton();
+        btnCerrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,6 +40,12 @@ public class FrmRegistro extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(txfNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 87, 160, 30));
         jPanel1.add(txfApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 160, 30));
+
+        txfEdad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txfEdadKeyTyped(evt);
+            }
+        });
         jPanel1.add(txfEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 177, 160, 30));
 
         cboSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
@@ -47,7 +54,7 @@ public class FrmRegistro extends javax.swing.JFrame {
         cboGrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3ro", "4to" }));
         jPanel1.add(cboGrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 265, 160, 30));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FrmRegistro.png"))); // NOI18N
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FrmRegistroVol2.png"))); // NOI18N
         jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 410));
 
         btnGuardar.setText("GUARDAR");
@@ -57,6 +64,14 @@ public class FrmRegistro extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, 130, 40));
+
+        btnCerrar.setText("jButton1");
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -83,9 +98,22 @@ public class FrmRegistro extends javax.swing.JFrame {
         
         user = new Usuario(nombre, apellido, edad, sexo, grado);
         ListaUsuarios.matrizUsuarios[ListaUsuarios.posUsuario] = user;
+        ControladorDatos.Datos.guardarPerfiles();
         new WindConfirmRegister().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void txfEdadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txfEdadKeyTyped
+                char t = evt.getKeyChar();
+        if (t < '0' || t > '9') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txfEdadKeyTyped
+
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
+        new FrmPerfiles().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCerrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,6 +151,7 @@ public class FrmRegistro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JComboBox<String> cboGrado;
     private javax.swing.JComboBox<String> cboSexo;

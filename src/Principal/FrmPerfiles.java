@@ -6,12 +6,12 @@ public class FrmPerfiles extends javax.swing.JFrame {
      * Creates new form FrmPerfiles
      */
     public FrmPerfiles() {
-        //xd
-        //hola buenas
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
         new ListaUsuarios();
+        
+        ControladorDatos.Datos.cargarPerfiles();
         
         btnP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconsPerfil/IconIncog.png")));
         btnP2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconsPerfil/IconIncog.png")));

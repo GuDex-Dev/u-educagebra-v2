@@ -4,10 +4,6 @@
  */
 package CuatroOp.Naturales;
 
-import EscogerOperacion.FrmNatDiv1;
-import EscogerOperacion.FrmNatMulti1;
-import EscogerOperacion.FrmNatResta1;
-import EscogerOperacion.FrmNatSuma1;
 import Principal.FrmCuatroOp;
 import Principal.ListaUsuarios;
 import java.awt.Color;
@@ -44,10 +40,6 @@ public class FrmNatSuma extends javax.swing.JFrame {
         resul = new javax.swing.JTextField();
         lbNum1 = new javax.swing.JLabel();
         lbNum2 = new javax.swing.JLabel();
-        res = new javax.swing.JButton();
-        su = new javax.swing.JButton();
-        mul = new javax.swing.JButton();
-        div = new javax.swing.JButton();
         jlbFondo = new javax.swing.JLabel();
         btnContinuar = new javax.swing.JButton();
         btnCalcular = new javax.swing.JButton();
@@ -96,44 +88,11 @@ public class FrmNatSuma extends javax.swing.JFrame {
         lbNum2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         getContentPane().add(lbNum2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 90, 40));
 
-        res.setText("-");
-        res.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resActionPerformed(evt);
-            }
-        });
-        getContentPane().add(res, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 40, -1));
-
-        su.setText("+");
-        su.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                suActionPerformed(evt);
-            }
-        });
-        getContentPane().add(su, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 40, -1));
-
-        mul.setText("x");
-        mul.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mulActionPerformed(evt);
-            }
-        });
-        getContentPane().add(mul, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 40, -1));
-
-        div.setText("%");
-        div.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                divActionPerformed(evt);
-            }
-        });
-        getContentPane().add(div, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 40, -1));
-
         jlbFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/SumaNatural.png"))); // NOI18N
         jlbFondo.setText("jLabel1");
         getContentPane().add(jlbFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 330));
 
         btnContinuar.setText("Continuar");
-        btnContinuar.setEnabled(false);
         btnContinuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnContinuarActionPerformed(evt);
@@ -215,7 +174,7 @@ public class FrmNatSuma extends javax.swing.JFrame {
         int num1, num2;
 
         Random r1 = new Random();
-        btnContinuar.setEnabled(false);
+        
         num1 = (r1.nextInt(99-10+1)+10); //Intervalo de numeros del 20, al 30;
         num2 = (r1.nextInt(99-1+1)+1);
         lbNum1.setText(String.valueOf(num1));
@@ -237,30 +196,6 @@ public class FrmNatSuma extends javax.swing.JFrame {
         Prin.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnCerrarActionPerformed
-
-    private void suActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suActionPerformed
-      FrmNatSuma1 Prin = new FrmNatSuma1();
-        Prin.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_suActionPerformed
-
-    private void resActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resActionPerformed
-          FrmNatResta1 Prin = new FrmNatResta1();
-        Prin.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_resActionPerformed
-
-    private void mulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mulActionPerformed
-               FrmNatMulti1 Prin = new FrmNatMulti1();
-        Prin.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_mulActionPerformed
-
-    private void divActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divActionPerformed
-                  FrmNatDiv1 Prin = new FrmNatDiv1();
-        Prin.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_divActionPerformed
 
     /**
      * @param args the command line arguments
@@ -305,14 +240,10 @@ public class FrmNatSuma extends javax.swing.JFrame {
     private javax.swing.JButton btnCalcular;
     private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnContinuar;
-    private javax.swing.JButton div;
     private javax.swing.JLabel jlbFondo;
     private javax.swing.JLabel lbIconVerify;
     private javax.swing.JLabel lbNum1;
     private javax.swing.JLabel lbNum2;
-    private javax.swing.JButton mul;
-    private javax.swing.JButton res;
     private javax.swing.JTextField resul;
-    private javax.swing.JButton su;
     // End of variables declaration//GEN-END:variables
 }

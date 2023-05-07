@@ -23,23 +23,29 @@ public class FrmMayorMenorIgual extends javax.swing.JFrame {
     /**
      * Creates new form ventana2
      */
+    private void nuevaOp() {
+        Random com = new Random();
+        int caso = (int) (Math.random() * (6 - 1 + 1) + 1);
+        switch (caso) {
+            case 1:
+                n11 = com.nextInt(999);
+                n21 = n11;
+                n1.setText(String.valueOf(n11));
+                n2.setText(String.valueOf(n21));
+                break;
+            default:
+                n11 = com.nextInt(999);
+                n21 = com.nextInt(999);
+                n1.setText(String.valueOf(n11));
+                n2.setText(String.valueOf(n21));
+        }
+    }
+
     public FrmMayorMenorIgual() {
         initComponents();
         this.setLocationRelativeTo(null);
-        Random com = new Random();
-
-        for (int i = 100; i <= 999; i++) {
-            n11 = com.nextInt(i);
-            n21 = com.nextInt(i);
-            n31 = com.nextInt(i);
-            n41 = com.nextInt(i);
-            n51 = com.nextInt(i);
-            n61 = com.nextInt(i);
-
-            n1.setText(String.valueOf(n11));
-            n2.setText(String.valueOf(n21));
-            actualizarBits();
-        }
+        nuevaOp();
+        actualizarBits();
 
     }
 
@@ -139,6 +145,11 @@ public class FrmMayorMenorIgual extends javax.swing.JFrame {
                 btnMayorMouseClicked(evt);
             }
         });
+        btnMayor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMayorActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnMayor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 40, 40));
 
         btnMenor.setText("jButton1");
@@ -147,12 +158,22 @@ public class FrmMayorMenorIgual extends javax.swing.JFrame {
                 btnMenorMouseClicked(evt);
             }
         });
+        btnMenor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenorActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnMenor, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 270, 40, 40));
 
         btnIgual.setText("jButton1");
         btnIgual.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnIgualMouseClicked(evt);
+            }
+        });
+        btnIgual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIgualActionPerformed(evt);
             }
         });
         jPanel1.add(btnIgual, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 270, 40, 40));
@@ -222,22 +243,9 @@ public class FrmMayorMenorIgual extends javax.swing.JFrame {
 
     private void jbcontinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbcontinuarActionPerformed
         okCalcular = false;
-        Random com = new Random();
+        nuevaOp();
+        actualizarBits();
 
-        n11 = Integer.parseInt(n1.getText());
-        n21 = Integer.parseInt(n2.getText());
-
-        for (int i = 100; i <= 999; i++) {
-            n11 = com.nextInt(i);
-            n21 = com.nextInt(i);
-            n31 = com.nextInt(i);
-            n41 = com.nextInt(i);
-            n51 = com.nextInt(i);
-            n61 = com.nextInt(i);
-
-            n1.setText(String.valueOf(n11));
-            n2.setText(String.valueOf(n21));
-        }
         resultado1.setText("");
         LbAddTextBits.setText("");
         lbIconVerify.setIcon(null);
@@ -251,20 +259,31 @@ public class FrmMayorMenorIgual extends javax.swing.JFrame {
     }//GEN-LAST:event_jbsalirActionPerformed
 
     private void btnMayorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMayorMouseClicked
-        resultado = ">";
-        resultado1.setText(resultado);
 
     }//GEN-LAST:event_btnMayorMouseClicked
 
     private void btnMenorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMenorMouseClicked
-        resultado = "<";
-        resultado1.setText(resultado);
+
     }//GEN-LAST:event_btnMenorMouseClicked
 
     private void btnIgualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIgualMouseClicked
+
+    }//GEN-LAST:event_btnIgualMouseClicked
+
+    private void btnMayorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMayorActionPerformed
+        resultado = ">";
+        resultado1.setText(resultado);
+    }//GEN-LAST:event_btnMayorActionPerformed
+
+    private void btnMenorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenorActionPerformed
+        resultado = "<";
+        resultado1.setText(resultado);
+    }//GEN-LAST:event_btnMenorActionPerformed
+
+    private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
         resultado = "=";
         resultado1.setText(resultado);
-    }//GEN-LAST:event_btnIgualMouseClicked
+    }//GEN-LAST:event_btnIgualActionPerformed
 
     /**
      * @param args the command line arguments

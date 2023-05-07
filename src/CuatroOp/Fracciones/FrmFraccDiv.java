@@ -214,7 +214,7 @@ public class FrmFraccDiv extends javax.swing.JFrame {
     }
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        // ------- suma de fracciones---------
+        // ------- División de fracciones---------
         int n1, n2, d1, d2, intNR, intDR, resultNum, resulDeno;
 
         if (txtNum.getText().length() != 0 && txtDeno.getText().length() != 0) {

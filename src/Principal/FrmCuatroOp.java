@@ -3,7 +3,9 @@ package Principal;
 import CuatroOp.Fracciones.*;
 import CuatroOp.Naturales.*;
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.text.html.HTML;
 import org.w3c.dom.css.RGBColor;
@@ -13,7 +15,9 @@ import org.w3c.dom.css.RGBColor;
  * @author USUARIO
  */
 public class FrmCuatroOp extends javax.swing.JFrame {
-int clicked;
+
+    int clicked;
+
     /**
      * Creates new form LaPrincipal
      */
@@ -23,10 +27,37 @@ int clicked;
         setLocationRelativeTo(null);
         this.setResizable(false);
         lbIniciales.setText(ListaUsuarios.matrizUsuarios[ListaUsuarios.posUsuario].iniciales);
-        lbNombre.setText("HOLA, "+ListaUsuarios.matrizUsuarios[ListaUsuarios.posUsuario].getNombre());
+        lbNombre.setText("HOLA, " + ListaUsuarios.matrizUsuarios[ListaUsuarios.posUsuario].getNombre());
+        pintarResuelto();
     }
-    
-    
+
+    private void pintarResuelto() {
+        ArrayList<JLabel> Niveles = new ArrayList<>();
+        Niveles.add(resuelto1);
+        Niveles.add(resuelto2);
+        Niveles.add(resuelto3);
+        Niveles.add(resuelto4);
+        Niveles.add(resuelto5);
+        Niveles.add(resuelto6);
+        Niveles.add(resuelto7);
+        lbNivel.setText("NIVEL " + ListaUsuarios.matrizUsuarios[ListaUsuarios.posUsuario].getNivel());
+        int n = ListaUsuarios.matrizUsuarios[ListaUsuarios.posUsuario].getOpCorrectas();
+        while (n > 7) {
+            n -= 7;
+        }
+
+        resuelto1.setForeground(Color.black);
+        resuelto2.setForeground(Color.black);
+        resuelto3.setForeground(Color.black);
+        resuelto4.setForeground(Color.black);
+        resuelto5.setForeground(Color.black);
+        resuelto6.setForeground(Color.black);
+        resuelto7.setForeground(Color.black);
+
+        for (int i = 0; i < n; i++) {
+            Niveles.get(i).setForeground(Color.red);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,6 +70,15 @@ int clicked;
 
         group = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
+        resuelto7 = new javax.swing.JLabel();
+        resuelto1 = new javax.swing.JLabel();
+        resuelto3 = new javax.swing.JLabel();
+        resuelto4 = new javax.swing.JLabel();
+        resuelto6 = new javax.swing.JLabel();
+        lbIniciales = new javax.swing.JLabel();
+        resuelto2 = new javax.swing.JLabel();
+        resuelto5 = new javax.swing.JLabel();
+        lbNivel = new javax.swing.JLabel();
         btnSuma = new javax.swing.JButton();
         btnResta = new javax.swing.JButton();
         btnnDiv = new javax.swing.JButton();
@@ -47,7 +87,6 @@ int clicked;
         btnNaturales = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         lbNombre = new javax.swing.JLabel();
-        lbIniciales = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
 
@@ -55,6 +94,60 @@ int clicked;
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        resuelto7.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
+        resuelto7.setForeground(new java.awt.Color(0, 0, 0));
+        resuelto7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        resuelto7.setText("•");
+        jPanel1.add(resuelto7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, 30, 30));
+
+        resuelto1.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
+        resuelto1.setForeground(new java.awt.Color(0, 0, 0));
+        resuelto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        resuelto1.setText("•");
+        jPanel1.add(resuelto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 30, 30));
+
+        resuelto3.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
+        resuelto3.setForeground(new java.awt.Color(0, 0, 0));
+        resuelto3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        resuelto3.setText("•");
+        jPanel1.add(resuelto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 30, 30));
+
+        resuelto4.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
+        resuelto4.setForeground(new java.awt.Color(0, 0, 0));
+        resuelto4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        resuelto4.setText("•");
+        jPanel1.add(resuelto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 30, 30));
+
+        resuelto6.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
+        resuelto6.setForeground(new java.awt.Color(0, 0, 0));
+        resuelto6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        resuelto6.setText("•");
+        jPanel1.add(resuelto6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 30, 30));
+
+        lbIniciales.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        lbIniciales.setForeground(new java.awt.Color(0, 0, 0));
+        lbIniciales.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbIniciales.setText("KM");
+        jPanel1.add(lbIniciales, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 15, 30, 20));
+
+        resuelto2.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
+        resuelto2.setForeground(new java.awt.Color(0, 0, 0));
+        resuelto2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        resuelto2.setText("•");
+        jPanel1.add(resuelto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 30, 30));
+
+        resuelto5.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
+        resuelto5.setForeground(new java.awt.Color(0, 0, 0));
+        resuelto5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        resuelto5.setText("•");
+        jPanel1.add(resuelto5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 30, 30));
+
+        lbNivel.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        lbNivel.setForeground(new java.awt.Color(0, 0, 0));
+        lbNivel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lbNivel.setText("NIVEL 1");
+        jPanel1.add(lbNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 120, -1));
 
         btnSuma.setToolTipText("Sumas");
         btnSuma.setBorder(null);
@@ -135,11 +228,6 @@ int clicked;
         lbNombre.setText("<HTML> HOLA, KEVINCITOOOO</HTML>");
         jPanel1.add(lbNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 150, 20));
 
-        lbIniciales.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
-        lbIniciales.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbIniciales.setText("KM");
-        jPanel1.add(lbIniciales, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 10, 40, 30));
-
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Matematicas2.png"))); // NOI18N
         jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 400));
 
@@ -184,44 +272,44 @@ int clicked;
 
 
     private void btnSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumaActionPerformed
-        if (clicked==1) {
+        if (clicked == 1) {
             new FrmNatSuma().setVisible(true);
             this.setVisible(false); //Ocultar Jframe principal
-        } else if(clicked == 2){
+        } else if (clicked == 2) {
             new FrmFraccSuma().setVisible(true);
             this.setVisible(false);
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Seleccione primero que desea realizar");
         }
     }//GEN-LAST:event_btnSumaActionPerformed
 
     private void btnRestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestaActionPerformed
-        if (clicked==1) {
+        if (clicked == 1) {
             new FrmNatResta().setVisible(true);
             this.setVisible(false);
-        } else if(clicked==2){
+        } else if (clicked == 2) {
             new FrmFraccResta().setVisible(true);
             this.setVisible(false);
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Seleccione primero que desea realizar");
         }
     }//GEN-LAST:event_btnRestaActionPerformed
 
     private void btnnDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnDivActionPerformed
-        if (clicked==1) {
+        if (clicked == 1) {
             new FrmNatDiv().setVisible(true);
             this.setVisible(false);
-        } else{
+        } else {
             new FrmFraccDiv().setVisible(true);
             this.setVisible(false);
         }
     }//GEN-LAST:event_btnnDivActionPerformed
 
     private void btnMultiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiActionPerformed
-        if (clicked==1) {
+        if (clicked == 1) {
             new FrmNatMulti().setVisible(true);
             this.setVisible(false);
-        } else{
+        } else {
             new FrmFraccMulti().setVisible(true);
             this.setVisible(false);
         }
@@ -233,23 +321,23 @@ int clicked;
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnFraccionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFraccionesMouseClicked
-        clicked=2;
-        btnFracciones.setBackground(new Color(166, 186, 248));
-        btnNaturales.setBackground(new Color(126,158,255));
+        
     }//GEN-LAST:event_btnFraccionesMouseClicked
 
     private void btnNaturalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNaturalesMouseClicked
-        clicked=1;
-        btnNaturales.setBackground(new Color(166, 186, 248));
-        btnFracciones.setBackground(new Color(126,158,255));
+        
     }//GEN-LAST:event_btnNaturalesMouseClicked
 
     private void btnNaturalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNaturalesActionPerformed
-       
+        clicked = 1;
+        btnNaturales.setBackground(new Color(166, 186, 248));
+        btnFracciones.setBackground(new Color(126, 158, 255));
     }//GEN-LAST:event_btnNaturalesActionPerformed
 
     private void btnFraccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFraccionesActionPerformed
-        // TODO add your handling code here:
+        clicked = 2;
+        btnFracciones.setBackground(new Color(166, 186, 248));
+        btnNaturales.setBackground(new Color(126, 158, 255));
     }//GEN-LAST:event_btnFraccionesActionPerformed
 
     /**
@@ -307,6 +395,14 @@ int clicked;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbIniciales;
+    private javax.swing.JLabel lbNivel;
     private javax.swing.JLabel lbNombre;
+    private javax.swing.JLabel resuelto1;
+    private javax.swing.JLabel resuelto2;
+    private javax.swing.JLabel resuelto3;
+    private javax.swing.JLabel resuelto4;
+    private javax.swing.JLabel resuelto5;
+    private javax.swing.JLabel resuelto6;
+    private javax.swing.JLabel resuelto7;
     // End of variables declaration//GEN-END:variables
 }

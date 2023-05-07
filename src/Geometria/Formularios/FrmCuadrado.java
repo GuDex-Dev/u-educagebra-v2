@@ -34,46 +34,27 @@ public class FrmCuadrado extends javax.swing.JFrame {
 
         group_editable = new javax.swing.ButtonGroup();
         PanelBackground = new javax.swing.JPanel();
-        btn_atras = new javax.swing.JButton();
-        lbl_title = new javax.swing.JLabel();
-        lbl_lado = new javax.swing.JLabel();
         txf_lado = new javax.swing.JTextField();
         PanelContenedor = new javax.swing.JPanel();
         PanelGrafico = new javax.swing.JPanel();
         lbl_per = new javax.swing.JLabel();
         lbl_area = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
+        btnCalcular = new javax.swing.JButton();
+        btn_atras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         PanelBackground.setBackground(new java.awt.Color(153, 153, 255));
         PanelBackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_atras.setText("ATRÁS");
-        btn_atras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_atrasActionPerformed(evt);
-            }
-        });
-        PanelBackground.add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, -1, -1));
-
-        lbl_title.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
-        lbl_title.setForeground(new java.awt.Color(153, 0, 0));
-        lbl_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_title.setText("CUADRADO");
-        PanelBackground.add(lbl_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 390, 70));
-
-        lbl_lado.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
-        lbl_lado.setForeground(new java.awt.Color(0, 0, 0));
-        lbl_lado.setText("LADO: ");
-        PanelBackground.add(lbl_lado, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 120, -1));
-
-        txf_lado.setBackground(new java.awt.Color(255, 255, 255));
+        txf_lado.setBackground(new java.awt.Color(241, 230, 184));
         txf_lado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txf_ladoActionPerformed(evt);
             }
         });
-        PanelBackground.add(txf_lado, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 110, 30));
+        PanelBackground.add(txf_lado, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 70, 40));
 
         PanelContenedor.setBackground(new java.awt.Color(102, 102, 255));
 
@@ -107,35 +88,54 @@ public class FrmCuadrado extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        PanelBackground.add(PanelContenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 350, 320));
+        PanelBackground.add(PanelContenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, 350, 320));
 
-        lbl_per.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
-        lbl_per.setForeground(new java.awt.Color(204, 0, 0));
-        lbl_per.setText("PERÍMETRO: ");
-        PanelBackground.add(lbl_per, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
+        lbl_per.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        lbl_per.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_per.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        PanelBackground.add(lbl_per, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 120, 30));
 
-        lbl_area.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
-        lbl_area.setForeground(new java.awt.Color(204, 0, 0));
-        lbl_area.setText("ÁREA: ");
-        PanelBackground.add(lbl_area, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
+        lbl_area.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        lbl_area.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_area.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        PanelBackground.add(lbl_area, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 110, 30));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FrmCuadrado.png"))); // NOI18N
+        PanelBackground.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, -1));
+
+        btnCalcular.setText("jButton1");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
+        PanelBackground.add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, 40));
+
+        btn_atras.setText("ATRÁS");
+        btn_atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_atrasActionPerformed(evt);
+            }
+        });
+        PanelBackground.add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBackground, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PanelBackground, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBackground, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PanelBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void actualizarExtrasTxf() {
-        lbl_per.setText("PERÍMETRO: " + cuad1.per());
-        lbl_area.setText("ÁREA: " + cuad1.area());
+        lbl_per.setText(cuad1.per()+" cm");
+        lbl_area.setText(cuad1.area()+" cm^2");
     }
 
     private void ValidarYGraficar() {
@@ -154,6 +154,15 @@ public class FrmCuadrado extends javax.swing.JFrame {
     }
 
     private void txf_ladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txf_ladoActionPerformed
+        
+    }//GEN-LAST:event_txf_ladoActionPerformed
+
+    private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
+        this.setVisible(false);
+        new FrmGeometria().setVisible(true);
+    }//GEN-LAST:event_btn_atrasActionPerformed
+
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         try {
             cuad1.setLado(Integer.parseInt(txf_lado.getText()));
             isNum = true;
@@ -174,12 +183,7 @@ public class FrmCuadrado extends javax.swing.JFrame {
             }
 
         }
-    }//GEN-LAST:event_txf_ladoActionPerformed
-
-    private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
-        this.setVisible(false);
-        new FrmGeometria().setVisible(true);
-    }//GEN-LAST:event_btn_atrasActionPerformed
+    }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -251,12 +255,12 @@ public class FrmCuadrado extends javax.swing.JFrame {
     private javax.swing.JPanel PanelBackground;
     private javax.swing.JPanel PanelContenedor;
     private javax.swing.JPanel PanelGrafico;
+    private javax.swing.JButton btnCalcular;
     private javax.swing.JButton btn_atras;
+    private javax.swing.JLabel fondo;
     private javax.swing.ButtonGroup group_editable;
     private javax.swing.JLabel lbl_area;
-    private javax.swing.JLabel lbl_lado;
     private javax.swing.JLabel lbl_per;
-    private javax.swing.JLabel lbl_title;
     private javax.swing.JTextField txf_lado;
     // End of variables declaration//GEN-END:variables
 }

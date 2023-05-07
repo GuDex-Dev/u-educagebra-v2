@@ -4,6 +4,8 @@ import java.awt.Color;
 import Geometria.Clases.*;
 import Geometria.Formularios.*;
 import Principal.*;
+import java.util.ArrayList;
+import javax.swing.JLabel;
 
 public class FrmGeometria extends javax.swing.JFrame {
 
@@ -11,6 +13,36 @@ public class FrmGeometria extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         transparencia();
+        lbIniciales.setText(ListaUsuarios.matrizUsuarios[ListaUsuarios.posUsuario].iniciales);
+        pintarResuelto();
+    }
+
+    private void pintarResuelto() {
+        ArrayList<JLabel> Niveles = new ArrayList<>();
+        Niveles.add(resuelto1);
+        Niveles.add(resuelto2);
+        Niveles.add(resuelto3);
+        Niveles.add(resuelto4);
+        Niveles.add(resuelto5);
+        Niveles.add(resuelto6);
+        Niveles.add(resuelto7);
+        lbNivel.setText("NIVEL " + ListaUsuarios.matrizUsuarios[ListaUsuarios.posUsuario].getNivel());
+        int n = ListaUsuarios.matrizUsuarios[ListaUsuarios.posUsuario].getOpCorrectas();
+        while (n > 7) {
+            n -= 7;
+        }
+
+        resuelto1.setForeground(Color.black);
+        resuelto2.setForeground(Color.black);
+        resuelto3.setForeground(Color.black);
+        resuelto4.setForeground(Color.black);
+        resuelto5.setForeground(Color.black);
+        resuelto6.setForeground(Color.black);
+        resuelto7.setForeground(Color.black);
+
+        for (int i = 0; i < n; i++) {
+            Niveles.get(i).setForeground(Color.red);
+        }
     }
 
     private void transparencia() {
@@ -42,7 +74,16 @@ public class FrmGeometria extends javax.swing.JFrame {
 
         group_editable = new javax.swing.ButtonGroup();
         PanelBackground = new javax.swing.JPanel();
-        lbl_title = new javax.swing.JLabel();
+        resuelto7 = new javax.swing.JLabel();
+        resuelto6 = new javax.swing.JLabel();
+        resuelto5 = new javax.swing.JLabel();
+        resuelto4 = new javax.swing.JLabel();
+        resuelto3 = new javax.swing.JLabel();
+        resuelto2 = new javax.swing.JLabel();
+        resuelto1 = new javax.swing.JLabel();
+        lbNivel = new javax.swing.JLabel();
+        lbIniciales = new javax.swing.JLabel();
+        Fondo = new javax.swing.JLabel();
         btn_triangulo = new javax.swing.JButton();
         btn_circulo = new javax.swing.JButton();
         btn_rectangulo = new javax.swing.JButton();
@@ -54,11 +95,62 @@ public class FrmGeometria extends javax.swing.JFrame {
         PanelBackground.setBackground(new java.awt.Color(153, 153, 255));
         PanelBackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lbl_title.setFont(new java.awt.Font("Dialog", 1, 52)); // NOI18N
-        lbl_title.setForeground(new java.awt.Color(153, 0, 0));
-        lbl_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_title.setText("FIGURAS");
-        PanelBackground.add(lbl_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 70));
+        resuelto7.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
+        resuelto7.setForeground(new java.awt.Color(0, 0, 0));
+        resuelto7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        resuelto7.setText("•");
+        PanelBackground.add(resuelto7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 30, 30));
+
+        resuelto6.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
+        resuelto6.setForeground(new java.awt.Color(0, 0, 0));
+        resuelto6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        resuelto6.setText("•");
+        PanelBackground.add(resuelto6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 30, 30));
+
+        resuelto5.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
+        resuelto5.setForeground(new java.awt.Color(0, 0, 0));
+        resuelto5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        resuelto5.setText("•");
+        PanelBackground.add(resuelto5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 30, 30));
+
+        resuelto4.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
+        resuelto4.setForeground(new java.awt.Color(0, 0, 0));
+        resuelto4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        resuelto4.setText("•");
+        PanelBackground.add(resuelto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 30, 30));
+
+        resuelto3.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
+        resuelto3.setForeground(new java.awt.Color(0, 0, 0));
+        resuelto3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        resuelto3.setText("•");
+        PanelBackground.add(resuelto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 30, 30));
+
+        resuelto2.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
+        resuelto2.setForeground(new java.awt.Color(0, 0, 0));
+        resuelto2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        resuelto2.setText("•");
+        PanelBackground.add(resuelto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 30, 30));
+
+        resuelto1.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
+        resuelto1.setForeground(new java.awt.Color(0, 0, 0));
+        resuelto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        resuelto1.setText("•");
+        PanelBackground.add(resuelto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 30, 30));
+
+        lbNivel.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        lbNivel.setForeground(new java.awt.Color(0, 0, 0));
+        lbNivel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lbNivel.setText("NIVEL 1");
+        PanelBackground.add(lbNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 110, -1));
+
+        lbIniciales.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        lbIniciales.setForeground(new java.awt.Color(0, 0, 0));
+        lbIniciales.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbIniciales.setText("KM");
+        PanelBackground.add(lbIniciales, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 18, 30, 20));
+
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FrmGeometria (1).png"))); // NOI18N
+        PanelBackground.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         btn_triangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/triangulo.png"))); // NOI18N
         btn_triangulo.addActionListener(new java.awt.event.ActionListener() {
@@ -66,7 +158,7 @@ public class FrmGeometria extends javax.swing.JFrame {
                 btn_trianguloActionPerformed(evt);
             }
         });
-        PanelBackground.add(btn_triangulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+        PanelBackground.add(btn_triangulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 180, -1));
 
         btn_circulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/circulo.png"))); // NOI18N
         btn_circulo.addActionListener(new java.awt.event.ActionListener() {
@@ -74,7 +166,7 @@ public class FrmGeometria extends javax.swing.JFrame {
                 btn_circuloActionPerformed(evt);
             }
         });
-        PanelBackground.add(btn_circulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
+        PanelBackground.add(btn_circulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, -1, -1));
 
         btn_rectangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/rectangulo.png"))); // NOI18N
         btn_rectangulo.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +174,7 @@ public class FrmGeometria extends javax.swing.JFrame {
                 btn_rectanguloActionPerformed(evt);
             }
         });
-        PanelBackground.add(btn_rectangulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, -1, -1));
+        PanelBackground.add(btn_rectangulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 160, -1));
 
         btn_cuadrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cuadrado.png"))); // NOI18N
         btn_cuadrado.addActionListener(new java.awt.event.ActionListener() {
@@ -90,7 +182,7 @@ public class FrmGeometria extends javax.swing.JFrame {
                 btn_cuadradoActionPerformed(evt);
             }
         });
-        PanelBackground.add(btn_cuadrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+        PanelBackground.add(btn_cuadrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 140, 130));
 
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -98,7 +190,7 @@ public class FrmGeometria extends javax.swing.JFrame {
                 btnRegresarActionPerformed(evt);
             }
         });
-        PanelBackground.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 80, 30));
+        PanelBackground.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,7 +200,7 @@ public class FrmGeometria extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBackground, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+            .addComponent(PanelBackground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -190,6 +282,7 @@ public class FrmGeometria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Fondo;
     private javax.swing.JPanel PanelBackground;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btn_circulo;
@@ -197,6 +290,14 @@ public class FrmGeometria extends javax.swing.JFrame {
     private javax.swing.JButton btn_rectangulo;
     private javax.swing.JButton btn_triangulo;
     private javax.swing.ButtonGroup group_editable;
-    private javax.swing.JLabel lbl_title;
+    private javax.swing.JLabel lbIniciales;
+    private javax.swing.JLabel lbNivel;
+    private javax.swing.JLabel resuelto1;
+    private javax.swing.JLabel resuelto2;
+    private javax.swing.JLabel resuelto3;
+    private javax.swing.JLabel resuelto4;
+    private javax.swing.JLabel resuelto5;
+    private javax.swing.JLabel resuelto6;
+    private javax.swing.JLabel resuelto7;
     // End of variables declaration//GEN-END:variables
 }

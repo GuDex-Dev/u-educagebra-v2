@@ -133,7 +133,6 @@ public class FrmOpCombinadas extends javax.swing.JFrame {
     }
 
     public void actualizarBits() {
-
         LabelBits.setText(String.valueOf(ListaUsuarios.matrizUsuarios[ListaUsuarios.posUsuario].getBits()));
     }
 
@@ -255,7 +254,6 @@ public class FrmOpCombinadas extends javax.swing.JFrame {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         if (!okCalcular) {
-
             if (rpta == Integer.parseInt(txtRpta.getText())) {
                 lbIconVerify.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconTrueExtraMYM.png")));
                 ListaUsuarios.matrizUsuarios[ListaUsuarios.posUsuario].OpCorrecta();

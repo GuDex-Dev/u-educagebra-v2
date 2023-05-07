@@ -87,7 +87,6 @@ public class FrmNatMulti extends javax.swing.JFrame {
         jPanel1.add(lbFondoo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, -1));
 
         btnContinuar.setText("Continuar");
-        btnContinuar.setEnabled(false);
         btnContinuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnContinuarActionPerformed(evt);
@@ -171,7 +170,7 @@ public class FrmNatMulti extends javax.swing.JFrame {
         int num1, num2;
 
         Random r1 = new Random();
-        btnContinuar.setEnabled(false);
+        
         num1 = r1.nextInt(9);
         num2 = r1.nextInt(9);
         lbNum1.setText(String.valueOf(num1));
