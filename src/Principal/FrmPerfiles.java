@@ -6,6 +6,7 @@ public class FrmPerfiles extends javax.swing.JFrame {
      * Creates new form FrmPerfiles
      */
     public FrmPerfiles() {
+        //xd
         //hola buenas
         initComponents();
         setLocationRelativeTo(null);
