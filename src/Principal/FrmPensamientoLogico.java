@@ -1,30 +1,38 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Principal;
 
 import Principal.Clases.ListaUsuarios;
+
+import PensamientoLogico.FrmParImpar;
+
+import NumerosYOperaciones.FrmOpCombinadas;
+import NumerosYOperaciones.FrmEcuaciones;
 import NumerosYOperaciones.FrmNumLitToCifras;
+import NumerosYOperaciones.FrmMayorMenorIgual;
+
+
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JLabel;
 
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 /**
  *
- * @author Gabriel
+ * @author Victor
  */
-public class FrmMain extends javax.swing.JFrame {
+public final class FrmPensamientoLogico extends javax.swing.JFrame {
 
     /**
-     * Creates new form FrmMain
+     * Creates new form ventana1
      */
-    public FrmMain() {
+    public FrmPensamientoLogico() {
         initComponents();
-        setLocationRelativeTo(null);
+        transparencia();
         lbIniciales.setText(ListaUsuarios.matrizUsuarios[ListaUsuarios.posUsuario].iniciales);
-
         pintarResuelto();
+        this.setLocationRelativeTo(null);
     }
 
     private void pintarResuelto() {
@@ -74,169 +82,156 @@ public class FrmMain extends javax.swing.JFrame {
         resuelto1 = new javax.swing.JLabel();
         lbNivel = new javax.swing.JLabel();
         lbIniciales = new javax.swing.JLabel();
-        fondo = new javax.swing.JLabel();
-        btnCerrar = new javax.swing.JButton();
-        btnOperaciones = new javax.swing.JButton();
-        btnNumerosYOperaciones = new javax.swing.JButton();
-        btnGeometria = new javax.swing.JButton();
-        btnPensamientoLogico = new javax.swing.JButton();
-        btnInfo = new javax.swing.JButton();
+        Fondo = new javax.swing.JLabel();
+        btnRegresar = new javax.swing.JButton();
+        btnSucesiones = new javax.swing.JButton();
+        btnParImpar = new javax.swing.JButton();
+        btnOrdenarMayorMenor = new javax.swing.JButton();
+        btnUnidades = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(102, 255, 153));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(119, 171, 189));
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         resuelto7.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
         resuelto7.setForeground(new java.awt.Color(0, 0, 0));
         resuelto7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         resuelto7.setText("•");
-        jPanel1.add(resuelto7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 150, 30, 30));
+        jPanel1.add(resuelto7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, 30, 30));
 
         resuelto6.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
         resuelto6.setForeground(new java.awt.Color(0, 0, 0));
         resuelto6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         resuelto6.setText("•");
-        jPanel1.add(resuelto6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 150, 30, 30));
+        jPanel1.add(resuelto6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, 30, 30));
 
         resuelto5.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
         resuelto5.setForeground(new java.awt.Color(0, 0, 0));
         resuelto5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         resuelto5.setText("•");
-        jPanel1.add(resuelto5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, 30, 30));
+        jPanel1.add(resuelto5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 30, 30));
 
         resuelto4.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
         resuelto4.setForeground(new java.awt.Color(0, 0, 0));
         resuelto4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         resuelto4.setText("•");
-        jPanel1.add(resuelto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, 30, 30));
+        jPanel1.add(resuelto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, 30, 30));
 
         resuelto3.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
         resuelto3.setForeground(new java.awt.Color(0, 0, 0));
         resuelto3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         resuelto3.setText("•");
-        jPanel1.add(resuelto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 30, 30));
+        jPanel1.add(resuelto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 30, 30));
 
         resuelto2.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
         resuelto2.setForeground(new java.awt.Color(0, 0, 0));
         resuelto2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         resuelto2.setText("•");
-        jPanel1.add(resuelto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 30, 30));
+        jPanel1.add(resuelto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 30, 30));
 
         resuelto1.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
         resuelto1.setForeground(new java.awt.Color(0, 0, 0));
         resuelto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         resuelto1.setText("•");
-        jPanel1.add(resuelto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 30, 30));
+        jPanel1.add(resuelto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 30, 30));
 
         lbNivel.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         lbNivel.setForeground(new java.awt.Color(0, 0, 0));
         lbNivel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbNivel.setText("NIVEL 1");
-        jPanel1.add(lbNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 110, -1));
+        jPanel1.add(lbNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 110, -1));
 
         lbIniciales.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         lbIniciales.setForeground(new java.awt.Color(0, 0, 0));
         lbIniciales.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbIniciales.setText("KM");
-        jPanel1.add(lbIniciales, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 142, 30, 20));
+        jPanel1.add(lbIniciales, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 20, 30, 20));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondoMainPrincipalEducaGebra3.png"))); // NOI18N
-        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 580, 510));
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondoPensamientoLogico.png"))); // NOI18N
+        jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        btnCerrar.setToolTipText("Cerrar");
-        btnCerrar.setBorder(null);
-        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
+        btnRegresar.setForeground(new java.awt.Color(0, 0, 0));
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCerrarActionPerformed(evt);
+                btnRegresarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 60, 50));
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
 
-        btnOperaciones.setToolTipText("Operaciones Basicas");
-        btnOperaciones.addActionListener(new java.awt.event.ActionListener() {
+        btnSucesiones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOperacionesActionPerformed(evt);
+                btnSucesionesActionPerformed(evt);
             }
         });
-        jPanel1.add(btnOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 120, 80));
+        jPanel1.add(btnSucesiones, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 220, 160));
 
-        btnNumerosYOperaciones.setToolTipText("Mayor y Menor");
-        btnNumerosYOperaciones.addActionListener(new java.awt.event.ActionListener() {
+        btnParImpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNumerosYOperacionesActionPerformed(evt);
+                btnParImparActionPerformed(evt);
             }
         });
-        jPanel1.add(btnNumerosYOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 120, 80));
+        jPanel1.add(btnParImpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 220, 160));
 
-        btnGeometria.setToolTipText("Geometría");
-        btnGeometria.addActionListener(new java.awt.event.ActionListener() {
+        btnOrdenarMayorMenor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGeometriaActionPerformed(evt);
+                btnOrdenarMayorMenorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGeometria, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 120, 80));
+        jPanel1.add(btnOrdenarMayorMenor, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 220, 160));
 
-        btnPensamientoLogico.setToolTipText("Geometría");
-        btnPensamientoLogico.addActionListener(new java.awt.event.ActionListener() {
+        btnUnidades.setText("jButton1");
+        btnUnidades.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPensamientoLogicoActionPerformed(evt);
+                btnUnidadesActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPensamientoLogico, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 120, 80));
+        jPanel1.add(btnUnidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 310, 220, 160));
 
-        btnInfo.setToolTipText("Cerrar");
-        btnInfo.setBorder(null);
-        btnInfo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInfoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 60, 50));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 520));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
-        new FrmPerfiles().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnCerrarActionPerformed
+    public void transparencia() {
+        btnSucesiones.setOpaque(false);
+        btnSucesiones.setContentAreaFilled(false);
+        btnSucesiones.setBorderPainted(false);
+        btnOrdenarMayorMenor.setOpaque(false);
+        btnOrdenarMayorMenor.setContentAreaFilled(false);
+        btnOrdenarMayorMenor.setBorderPainted(false);
+        btnParImpar.setOpaque(false);
+        btnParImpar.setContentAreaFilled(false);
 
-    private void btnOperacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOperacionesActionPerformed
-        new FrmCuatroOp().setVisible(true);
+    }
+    private void btnOrdenarMayorMenorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarMayorMenorActionPerformed
+        FrmOpCombinadas b = new FrmOpCombinadas();
+        b.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_btnOperacionesActionPerformed
+    }//GEN-LAST:event_btnOrdenarMayorMenorActionPerformed
 
-    private void btnNumerosYOperacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumerosYOperacionesActionPerformed
-        new FrmNumerosYOperaciones().setVisible(true);
+    private void btnSucesionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSucesionesActionPerformed
+        FrmMayorMenorIgual a = new FrmMayorMenorIgual();
+        a.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_btnNumerosYOperacionesActionPerformed
+    }//GEN-LAST:event_btnSucesionesActionPerformed
 
-    private void btnGeometriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGeometriaActionPerformed
-        new FrmGeometria().setVisible(true);
+    private void btnParImparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParImparActionPerformed
+        new FrmParImpar().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_btnGeometriaActionPerformed
+    }//GEN-LAST:event_btnParImparActionPerformed
 
-    private void btnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInfoActionPerformed
-        new FrmEstadisticas().setVisible(true);
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        new FrmMain().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_btnInfoActionPerformed
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
-    private void btnPensamientoLogicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPensamientoLogicoActionPerformed
-        new FrmPensamientoLogico().setVisible(true);
+    private void btnUnidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUnidadesActionPerformed
+        new FrmEcuaciones().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_btnPensamientoLogicoActionPerformed
+    }//GEN-LAST:event_btnUnidadesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -255,32 +250,46 @@ public class FrmMain extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPensamientoLogico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPensamientoLogico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPensamientoLogico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPensamientoLogico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmMain().setVisible(true);
+                new FrmPensamientoLogico().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCerrar;
-    private javax.swing.JButton btnGeometria;
-    private javax.swing.JButton btnInfo;
-    private javax.swing.JButton btnNumerosYOperaciones;
-    private javax.swing.JButton btnOperaciones;
-    private javax.swing.JButton btnPensamientoLogico;
-    private javax.swing.JLabel fondo;
+    private javax.swing.JLabel Fondo;
+    private javax.swing.JButton btnOrdenarMayorMenor;
+    private javax.swing.JButton btnParImpar;
+    private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnSucesiones;
+    private javax.swing.JButton btnUnidades;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbIniciales;
     private javax.swing.JLabel lbNivel;
@@ -292,4 +301,5 @@ public class FrmMain extends javax.swing.JFrame {
     private javax.swing.JLabel resuelto6;
     private javax.swing.JLabel resuelto7;
     // End of variables declaration//GEN-END:variables
+
 }
