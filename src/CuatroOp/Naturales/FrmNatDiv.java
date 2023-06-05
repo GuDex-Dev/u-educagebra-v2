@@ -1,7 +1,7 @@
 package CuatroOp.Naturales;
 
 import Principal.FrmCuatroOp;
-import Principal.ListaUsuarios;
+import Principal.Clases.ListaUsuarios;
 import java.awt.Color;
 import java.util.Random;
 import javax.swing.JOptionPane;

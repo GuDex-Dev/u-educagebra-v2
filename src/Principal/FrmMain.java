@@ -4,7 +4,8 @@
  */
 package Principal;
 
-import Extras.FrmNumLitToCifras;
+import Principal.Clases.ListaUsuarios;
+import NumerosYOperaciones.FrmNumLitToCifras;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JLabel;
@@ -209,7 +210,7 @@ public class FrmMain extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOPActionPerformed
 
     private void btnExtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExtrasActionPerformed
-        new FrmExtras().setVisible(true);
+        new FrmNumerosYOperaciones().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnExtrasActionPerformed
 

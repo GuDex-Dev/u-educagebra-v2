@@ -1,7 +1,7 @@
-package Extras;
+package NumerosYOperaciones;
 
-import Principal.FrmExtras;
-import Principal.ListaUsuarios;
+import Principal.FrmNumerosYOperaciones;
+import Principal.Clases.ListaUsuarios;
 import java.awt.Color;
 
 /*
@@ -247,7 +247,7 @@ public class FrmOpCombinadas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnContinuarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        FrmExtras a = new FrmExtras();
+        FrmNumerosYOperaciones a = new FrmNumerosYOperaciones();
         a.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnSalirActionPerformed

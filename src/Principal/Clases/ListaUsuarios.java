@@ -1,4 +1,4 @@
-package Principal;
+package Principal.Clases;
 
 public class ListaUsuarios {
 

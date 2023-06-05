@@ -1,7 +1,7 @@
-package Extras;
+package NumerosYOperaciones;
 
-import Principal.FrmExtras;
-import Principal.ListaUsuarios;
+import Principal.FrmNumerosYOperaciones;
+import Principal.Clases.ListaUsuarios;
 import java.awt.Color;
 import java.util.Random;
 import javax.swing.JOptionPane;
@@ -253,7 +253,7 @@ public class FrmMayorMenorIgual extends javax.swing.JFrame {
     }//GEN-LAST:event_jbcontinuarActionPerformed
 
     private void jbsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbsalirActionPerformed
-        FrmExtras a = new FrmExtras();
+        FrmNumerosYOperaciones a = new FrmNumerosYOperaciones();
         a.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jbsalirActionPerformed

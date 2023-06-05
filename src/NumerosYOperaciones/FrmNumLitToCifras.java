@@ -1,8 +1,8 @@
-package Extras;
+package NumerosYOperaciones;
 
-import Principal.FrmExtras;
-import Extras.Clases.ListaNumeros;
-import Principal.ListaUsuarios;
+import Principal.FrmNumerosYOperaciones;
+import NumerosYOperaciones.Clases.ListaNumeros;
+import Principal.Clases.ListaUsuarios;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JLabel;
@@ -260,7 +260,7 @@ public class FrmNumLitToCifras extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNum1KeyTyped
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        new FrmExtras().setVisible(true);
+        new FrmNumerosYOperaciones().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnSalirActionPerformed
 
@@ -319,9 +319,12 @@ public class FrmNumLitToCifras extends javax.swing.JFrame {
                 }
                 str += " " + numToString(num - (numTemp * 1000));
             } else {
+                //56
+                //
+                //numTemp = 5
                 numTemp = Integer.parseInt(strNum.substring(0, 1)) * (int) (Math.pow(10, cif - 1)); //1er digito
 
-                //System.out.println("NumTemp: " + numTemp);
+                System.out.println("NumTemp: " + numTemp);
                 if (num == numTemp) {
                     return "Error";
                 }
@@ -334,7 +337,7 @@ public class FrmNumLitToCifras extends javax.swing.JFrame {
             }
         }
         contRec++;
-        //System.out.println(contRec + "   " + num);
+        System.out.println(contRec + "   " + num);
         return str;
     }
 
@@ -358,7 +361,7 @@ public class FrmNumLitToCifras extends javax.swing.JFrame {
                 intActual = GenerarRandom(0, 99);
         }
         
-        
+        intActual = 987654;
 
         for (int i = intActual; i >= 1; i /= 10) {
             cif++;

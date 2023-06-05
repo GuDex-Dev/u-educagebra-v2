@@ -1,5 +1,7 @@
 package Principal;
 
+import Principal.Clases.Usuario;
+import Principal.Clases.ListaUsuarios;
 import javax.swing.JOptionPane;
 
 public class FrmRegistro extends javax.swing.JFrame {

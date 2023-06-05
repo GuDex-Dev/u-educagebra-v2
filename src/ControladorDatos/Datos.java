@@ -1,7 +1,7 @@
 package ControladorDatos;
 
-import Principal.ListaUsuarios;
-import Principal.Usuario;
+import Principal.Clases.ListaUsuarios;
+import Principal.Clases.Usuario;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;

@@ -1,7 +1,7 @@
-package Extras;
+package NumerosYOperaciones;
 
-import Principal.FrmExtras;
-import Principal.ListaUsuarios;
+import Principal.FrmNumerosYOperaciones;
+import Principal.Clases.ListaUsuarios;
 import java.awt.Color;
 
 public class FrmEcuaciones extends javax.swing.JFrame {
@@ -151,7 +151,7 @@ public class FrmEcuaciones extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        new FrmExtras().setVisible(true);
+        new FrmNumerosYOperaciones().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnSalirActionPerformed
 

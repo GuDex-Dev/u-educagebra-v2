@@ -4,6 +4,8 @@
  */
 package Principal;
 
+import Principal.Clases.Usuario;
+import Principal.Clases.ListaUsuarios;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JLabel;

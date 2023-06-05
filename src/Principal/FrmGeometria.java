@@ -1,5 +1,6 @@
 package Principal;
 
+import Principal.Clases.ListaUsuarios;
 import java.awt.Color;
 import Geometria.Clases.*;
 import Geometria.Formularios.*;

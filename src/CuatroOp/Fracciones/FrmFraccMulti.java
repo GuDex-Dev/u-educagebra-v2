@@ -1,8 +1,8 @@
 package CuatroOp.Fracciones;
 
-import Extras.Clases.ListaNumeros;
+import NumerosYOperaciones.Clases.ListaNumeros;
 import Principal.FrmCuatroOp;
-import Principal.ListaUsuarios;
+import Principal.Clases.ListaUsuarios;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JTextField;

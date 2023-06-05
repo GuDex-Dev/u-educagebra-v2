@@ -1,5 +1,7 @@
 package Principal;
 
+import Principal.Clases.ListaUsuarios;
+
 public class FrmPerfiles extends javax.swing.JFrame {
     
     /**

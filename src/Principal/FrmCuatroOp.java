@@ -1,5 +1,6 @@
 package Principal;
 
+import Principal.Clases.ListaUsuarios;
 import CuatroOp.Fracciones.*;
 import CuatroOp.Naturales.*;
 import java.awt.Color;
